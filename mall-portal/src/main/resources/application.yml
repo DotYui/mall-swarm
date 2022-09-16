@@ -1,3 +1,5 @@
+aliAddr: aliyunhost
+
 server:
   port: 8085
 spring:
@@ -7,7 +9,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
     username: root
-    password: root
+    password: 5729
     druid:
       initial-size: 5 #连接池初始化大小
       min-idle: 10 #最小空闲连接数
@@ -19,21 +21,23 @@ spring:
         login-password: druid
   data:
     mongodb:
-      host: localhost
+      host: ${aliAddr}
       port: 27017
       database: mall-port
+      username: root
+      password: 5729
   redis:
-    host: localhost # Redis服务器地址
+    host: ${aliAddr} # Redis服务器地址
     database: 0 # Redis数据库索引（默认为0）
     port: 6379 # Redis服务器连接端口
     password:  # Redis服务器连接密码（默认为空）
     timeout: 3000ms # 连接超时时间（毫秒）
   rabbitmq:
-    host: localhost
+    host: ${aliAddr}
     port: 5672
-    virtual-host: /mall
-    username: mall
-    password: mall
+#    virtual-host: /mall
+#    username: mall
+#    password: mall
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml
@@ -72,3 +76,8 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
         loggerLevel: basic
+
+logging:
+  level:
+    root: info
+    com.macro.mall: info
