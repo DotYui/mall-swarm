@@ -56,7 +56,7 @@ aliyun:
   oss:
     endpoint: oss-cn-guangzhou.aliyuncs.com # oss对外服务的访问域名
     accessKeyId: LTAI5tK1DHUf7wEYbJjcLSDz # 访问身份验证中用到用户标识
-    accessKeySecret: cHyEmQYuPdD3GtKSTYvFdSpGCa0Zpd # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
+    accessKeySecret:  # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
     bucketName: macro-oss-yui # oss的存储空间
     policy:
       expire: 300 # 签名有效期(S)
